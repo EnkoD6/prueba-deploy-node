@@ -53,7 +53,7 @@ app.post('/movies', (req, res) => {
 app.patch('/movies/:id', (req, res) => {
   const result = validatePartialMovie(req.body)
   
-    if (!result.success) {
+    if (!result.success) { 
         return res.status(400).json({ error: JSON.parse(result.error.message) })
     }
     const { id } = req.params
